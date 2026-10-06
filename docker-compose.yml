@@ -1,0 +1,7 @@
+services:
+  verifier:
+    build: .
+    image: dxf-block-instance-verifier:latest
+    ports:
+      - "8080:80"
+    restart: unless-stopped

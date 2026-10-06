@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>DXF 块实例圆弧验图</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <div>
+        <h1>DXF 块实例验图</h1>
+        <p>展开真实 INSERT 实例，检查镜像 / 非均匀缩放后的 bulge 参数曲线</p>
+      </div>
+      <div class="file-control">
+        <label class="button primary">
+          导入 ASCII DXF
+          <input id="file-input" type="file" accept=".dxf,text/plain" hidden />
+        </label>
+        <span id="file-name" class="muted">未导入文件</span>
+      </div>
+    </header>
+
+    <main class="workspace">
+      <aside class="panel" id="tree-panel">
+        <div class="panel-title">
+          <h2>插入实例</h2>
+          <span id="expansion-count" class="badge"></span>
+        </div>
+        <div id="tree" class="tree empty">导入 DXF 后显示实例树</div>
+      </aside>
+
+      <section class="canvas-wrap">
+        <div class="toolbar">
+          <button id="zoom-in" type="button">放大</button>
+          <button id="zoom-out" type="button">缩小</button>
+          <button id="fit-view" type="button">适合视图</button>
+          <button id="reset-view" type="button">1:1</button>
+          <span id="zoom-label" class="muted"></span>
+          <span class="spacer"></span>
+          <span class="hint">滚轮缩放，拖拽平移；缩放只改变显示</span>
+        </div>
+        <svg id="canvas" xmlns="http://www.w3.org/2000/svg">
+          <g id="grid-layer"></g>
+          <g id="geometry-layer"></g>
+          <g id="overlay-layer"></g>
+        </svg>
+        <div id="drop-note" class="drop-note">拖放 ASCII DXF 到页面，或点击左上角导入</div>
+      </section>
+
+      <aside class="panel" id="details-panel">
+        <div class="panel-title"><h2>验图量测</h2></div>
+        <div id="details" class="details empty">选择实例、多段线或单段圆弧 / 线段</div>
+        <div class="findings">
+          <h2>审图意见</h2>
+          <div class="finding-form">
+            <input id="finding-text" type="text" placeholder="为当前选择记录问题…" />
+            <button id="add-finding" type="button">记录</button>
+          </div>
+          <ol id="finding-list"></ol>
+        </div>
+      </aside>
+    </main>
+
+    <div id="toast" class="toast" role="alert" hidden></div>
+    <script type="module" src="./src/ui/app.js"></script>
+  </body>
+</html>
