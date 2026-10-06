@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>DXF 块实例圆弧验图</title>
+<link rel="stylesheet" href="css/app.css" />
+</head>
+<body>
+<header class="topbar">
+  <div class="brand">
+    <span class="logo">⌖</span>
+    <h1>DXF 块实例验图 <small>LINE / LWPOLYLINE / BLOCK / INSERT · 平面 Z=0</small></h1>
+  </div>
+  <div class="actions">
+    <label class="btn primary">
+      导入 ASCII DXF
+      <input type="file" id="fileInput" accept=".dxf,.txt" hidden />
+    </label>
+    <button class="btn" id="loadSampleBtn" title="加载内置示例（非零基点 / 两层嵌套 / 负比例 / 跨象限弧）">加载示例</button>
+    <button class="btn" id="resetOverridesBtn" disabled>复位所有比例修改</button>
+  </div>
+</header>
+
+<main class="layout">
+  <!-- 左：实例树 -->
+  <aside class="panel left">
+    <div class="panel-h">
+      <h2>插入实例</h2>
+      <span id="modelStats" class="stats"></span>
+    </div>
+    <div id="tree" class="tree">
+      <div class="hint">导入 DXF 后在此选择具体插入实例。<br/><br/>
+        支持：块基点平移、非均匀缩放、旋转、负比例镜像、最多 4 层嵌套、展开实体 ≤ 60。<br/><br>
+        拒绝：循环引用、未知块、零缩放、阵列 (MINSERT)、外部参照、文字、宽线、非零 Z / 非默认挤出。
+      </div>
+    </div>
+  </aside>
+
+  <!-- 中：图纸 -->
+  <section class="viewport">
+    <div class="canvas-toolbar">
+      <button class="btn sm" id="zoomFit">适应窗口</button>
+      <button class="btn sm" id="zoomIn">＋</button>
+      <button class="btn sm" id="zoomOut">－</button>
+      <label class="chk"><input type="checkbox" id="toggleBounds" checked /> 包围盒</label>
+      <label class="chk"><input type="checkbox" id="toggleDim" checked /> 端点/极值标注</label>
+      <span id="viewScale" class="viewscale">缩放 100%</span>
+      <span class="spacer"></span>
+      <span class="note">视图缩放只改变显示，不改变右侧量测值</span>
+    </div>
+    <canvas id="canvas"></canvas>
+    <div id="dropOverlay" class="drop-overlay" hidden>松开以导入 DXF</div>
+    <div id="emptyState" class="empty-state">
+      <div class="empty-card">
+        <h2>导入平面 ASCII DXF 开始验图</h2>
+        <p>点击右上角「导入 ASCII DXF」，或将 <code>.dxf</code> 文件拖入本区域。</p>
+        <p>也可以 <a href="#" id="emptySample">加载内置示例</a>。</p>
+        <p class="muted">镜像 / 非均匀缩放后的 bulge 圆弧按变换后的参数曲线（椭圆弧）精确量测，<br/>不会退化为连接端点的直线段。</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 右：量测 + 修改 + 审图 -->
+  <aside class="panel right">
+    <div class="tabs">
+      <button class="tab active" data-tab="inspect">实例量测</button>
+      <button class="tab" data-tab="review">审图记录 <span id="reviewBadge" class="badge" hidden>0</span></button>
+    </div>
+
+    <div class="tabpane" id="tab-inspect">
+      <div id="details" class="details">
+        <div class="hint">在左侧树或图纸中点选一个实例。</div>
+      </div>
+    </div>
+
+    <div class="tabpane" id="tab-review" hidden>
+      <div class="review-box">
+        <div id="reviewTarget" class="review-target">未选择实例</div>
+        <textarea id="reviewNote" rows="3" placeholder="问题描述，例如：镜像门扇开启弧线方向与图例相反……"></textarea>
+        <button class="btn primary sm" id="addReviewBtn" disabled>记录到该实例</button>
+      </div>
+      <div id="reviewList" class="review-list"></div>
+      <div class="review-actions">
+        <button class="btn sm" id="exportReviewBtn" disabled>导出审图报告 JSON</button>
+        <button class="btn sm danger" id="clearReviewBtn" disabled>清空</button>
+      </div>
+    </div>
+  </aside>
+</main>
+
+<div id="toast" class="toast" hidden></div>
+
+<script src="js/dxf-core.js"></script>
+<script src="js/dxf-writer.js"></script>
+<script src="js/sample.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>

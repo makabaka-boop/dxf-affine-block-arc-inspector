@@ -1,0 +1,586 @@
+  0
+SECTION
+  2
+HEADER
+  9
+$ACADVER
+  1
+AC1027
+  0
+ENDSEC
+  0
+SECTION
+  2
+BLOCKS
+  0
+BLOCK
+  5
+0
+100
+AcDbEntity
+  8
+0
+100
+AcDbBlockBegin
+  2
+KNOB
+ 70
+0
+ 10
+0.5
+ 20
+0.5
+ 30
+0
+  3
+KNOB
+  1
+
+  0
+LINE
+  5
+0
+100
+AcDbEntity
+  8
+0
+100
+AcDbLine
+ 10
+0
+ 20
+0
+ 30
+0
+ 11
+1
+ 21
+0
+ 31
+0
+  0
+LWPOLYLINE
+  5
+0
+100
+AcDbEntity
+  8
+0
+100
+AcDbPolyline
+ 90
+2
+ 70
+0
+ 10
+0
+ 20
+0
+ 42
+1
+ 10
+1
+ 20
+0
+ 42
+0
+  0
+LINE
+  5
+0
+100
+AcDbEntity
+  8
+0
+100
+AcDbLine
+ 10
+0
+ 20
+0
+ 30
+0
+ 11
+0
+ 21
+-0.4
+ 31
+0
+  0
+ENDBLK
+  5
+0
+100
+AcDbEntity
+  8
+0
+100
+AcDbBlockEnd
+  0
+BLOCK
+  5
+0
+100
+AcDbEntity
+  8
+0
+100
+AcDbBlockBegin
+  2
+CABINET
+ 70
+0
+ 10
+0
+ 20
+0
+ 30
+0
+  3
+CABINET
+  1
+
+  0
+LWPOLYLINE
+  5
+0
+100
+AcDbEntity
+  8
+0
+100
+AcDbPolyline
+ 90
+4
+ 70
+1
+ 10
+0
+ 20
+0
+ 42
+0
+ 10
+30
+ 20
+0
+ 42
+0
+ 10
+30
+ 20
+14
+ 42
+0
+ 10
+0
+ 20
+14
+ 42
+0
+  0
+LWPOLYLINE
+  5
+0
+100
+AcDbEntity
+  8
+0
+100
+AcDbPolyline
+ 90
+2
+ 70
+0
+ 10
+8
+ 20
+3
+ 42
+2
+ 10
+22
+ 20
+3
+ 42
+0
+  0
+INSERT
+  5
+0
+100
+AcDbEntity
+  8
+0
+100
+AcDbBlockReference
+  2
+KNOB
+ 10
+7
+ 20
+7
+ 30
+0
+ 41
+1
+ 42
+1
+ 50
+0
+ 70
+0
+ 71
+0
+ 44
+0
+ 45
+0
+  0
+INSERT
+  5
+0
+100
+AcDbEntity
+  8
+0
+100
+AcDbBlockReference
+  2
+KNOB
+ 10
+23
+ 20
+7
+ 30
+0
+ 41
+-1
+ 42
+1
+ 50
+0
+ 70
+0
+ 71
+0
+ 44
+0
+ 45
+0
+  0
+ENDBLK
+  5
+0
+100
+AcDbEntity
+  8
+0
+100
+AcDbBlockEnd
+  0
+BLOCK
+  5
+0
+100
+AcDbEntity
+  8
+0
+100
+AcDbBlockBegin
+  2
+DOOR
+ 70
+0
+ 10
+0
+ 20
+0
+ 30
+0
+  3
+DOOR
+  1
+
+  0
+LINE
+  5
+0
+100
+AcDbEntity
+  8
+0
+100
+AcDbLine
+ 10
+0
+ 20
+0
+ 30
+0
+ 11
+10
+ 21
+0
+ 31
+0
+  0
+LWPOLYLINE
+  5
+0
+100
+AcDbEntity
+  8
+0
+100
+AcDbPolyline
+ 90
+2
+ 70
+0
+ 10
+0
+ 20
+0
+ 42
+-0.5
+ 10
+10
+ 20
+0
+ 42
+0
+  0
+ENDBLK
+  5
+0
+100
+AcDbEntity
+  8
+0
+100
+AcDbBlockEnd
+  0
+ENDSEC
+  0
+SECTION
+  2
+ENTITIES
+  0
+LINE
+  5
+0
+100
+AcDbEntity
+  8
+0
+100
+AcDbLine
+ 10
+-5
+ 20
+0
+ 30
+0
+ 11
+80
+ 21
+0
+ 31
+0
+  0
+INSERT
+  5
+0
+100
+AcDbEntity
+  8
+0
+100
+AcDbBlockReference
+  2
+DOOR
+ 10
+10
+ 20
+0
+ 30
+0
+ 41
+1
+ 42
+1
+ 50
+0
+ 70
+0
+ 71
+0
+ 44
+0
+ 45
+0
+  0
+INSERT
+  5
+0
+100
+AcDbEntity
+  8
+0
+100
+AcDbBlockReference
+  2
+DOOR
+ 10
+40
+ 20
+0
+ 30
+0
+ 41
+1
+ 42
+1
+ 50
+90
+ 70
+0
+ 71
+0
+ 44
+0
+ 45
+0
+  0
+INSERT
+  5
+0
+100
+AcDbEntity
+  8
+0
+100
+AcDbBlockReference
+  2
+DOOR
+ 10
+60
+ 20
+10
+ 30
+0
+ 41
+-1
+ 42
+1
+ 50
+0
+ 70
+0
+ 71
+0
+ 44
+0
+ 45
+0
+  0
+INSERT
+  5
+0
+100
+AcDbEntity
+  8
+0
+100
+AcDbBlockReference
+  2
+DOOR
+ 10
+10
+ 20
+18
+ 30
+0
+ 41
+2
+ 42
+0.5
+ 50
+15
+ 70
+0
+ 71
+0
+ 44
+0
+ 45
+0
+  0
+INSERT
+  5
+0
+100
+AcDbEntity
+  8
+0
+100
+AcDbBlockReference
+  2
+CABINET
+ 10
+5
+ 20
+30
+ 30
+0
+ 41
+1
+ 42
+1
+ 50
+0
+ 70
+0
+ 71
+0
+ 44
+0
+ 45
+0
+  0
+INSERT
+  5
+0
+100
+AcDbEntity
+  8
+0
+100
+AcDbBlockReference
+  2
+CABINET
+ 10
+50
+ 20
+55
+ 30
+0
+ 41
+1
+ 42
+-1
+ 50
+0
+ 70
+0
+ 71
+0
+ 44
+0
+ 45
+0
+  0
+ENDSEC
+  0
+EOF
